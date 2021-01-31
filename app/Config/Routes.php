@@ -20,7 +20,7 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
-$routes->setAutoRoute(false);
+$routes->setAutoRoute(true);
 
 /**
  * --------------------------------------------------------------------
@@ -33,6 +33,12 @@ $routes->setAutoRoute(false);
 $routes->get('/', 'Home::index');
 $routes->post('/test', 'Home::index');
 
+///$routes->get('/admin/bike', 'Bike::index');
+//$routes->get('/vish', 'App\Controllers\Tyre\Bike::index');
+
+//$routes->resource('bike', ['controller' =>'App\Controllers\admin']);
+$routes->add('/tyre/bike/car', 'Bike::car', ['namespace' => 'App\Controllers\Tyre']);
+ 
 $routes->get('/user/add', 'User::add');
 $routes->get('/user', 'User::index');
  
